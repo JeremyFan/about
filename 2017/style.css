@@ -1,0 +1,51 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+.sec-index {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  resize: vertical;
+}
+.sec-index .cover {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  background: rgba(0,0,0,0.25);
+}
+.sec-index .bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: url("images/hs.jpeg") no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+.sec-index .content {
+  z-index: 1;
+  font-size: 36px;
+  color: #fff;
+  text-align: center;
+}
+section .fix-bg {
+  min-height: 80vh;
+  background: url("images/gyy.jpeg") no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-attachment: fixed;
+}
+.sec-music .fix-bg {
+  background-image: url("images/le.jpeg");
+}
+.sec-end {
+  background: #f9f9f9;
+}
