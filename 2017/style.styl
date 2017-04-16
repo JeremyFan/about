@@ -40,7 +40,9 @@ a, a:visited
 	.cover
 		absolute()
 		z-index 1
-		background rgba(0,0,0,0.3)
+		transition(1.25s)
+		&.shadow
+			background rgba(0,0,0,0.2)
 	
 	.bg-container
 		absolute()
@@ -54,9 +56,9 @@ a, a:visited
 			background #333 url('images/hs.jpeg') no-repeat
 			background-size cover
 			background-position 50% 50%
-			transition(1.25s)
+			transition(1s)
 			&.blur
-				filter blur(10px)
+				filter blur(5px)
 	.content
 		z-index 1
 		color #eee
