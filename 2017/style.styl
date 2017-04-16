@@ -4,6 +4,10 @@ absolute()
 	right 0
 	bottom 0
 	left 0
+	
+transition($time)
+	transition all $time linear
+	// transition filter linear
 
 @font-face
 	font-family 'sourcesanspro'
@@ -12,25 +16,9 @@ absolute()
 	font-style normal
 
 .icon
-	/* 图标和文字相邻时，垂直对齐 */
 	vertical-align -0.15em
-	/* 通过设置 color 来改变 SVG 的颜色/fill */
 	fill currentColor
-	/* path 和 stroke 溢出 viewBox 部分在 IE 下会显示
-	   normalize.css 中也包含这行 */
 	overflow hidden
-
-.icon-picture
-	position absolute
-	top 20px
-	right 20px
-	z-index 1
-	width 1.5em
-	height 1.5em
-	opacity .8
-	cursor pointer
-	color #fff
-
 
 html, body
 	height 100%
@@ -54,15 +42,26 @@ a, a:visited
 		z-index 1
 		background rgba(0,0,0,0.3)
 	
-	.bg
+	.bg-container
 		absolute()
-		background #333 url('images/hs.jpeg') no-repeat
-		background-size cover
-		background-position 50% 50%
+		overflow hidden
+		.bg
+			absolute()
+			top -15px
+			right -15px
+			bottom -15px
+			left -15px
+			background #333 url('images/hs.jpeg') no-repeat
+			background-size cover
+			background-position 50% 50%
+			transition(1.25s)
+			&.blur
+				filter blur(10px)
 	.content
 		z-index 1
 		color #eee
 		text-align center
+		transition(.5s)
 		
 		h1
 			font-size 48px
@@ -81,11 +80,25 @@ a, a:visited
 			margin 0 auto
 			line-height 1.6
 			opacity 0.8
-			transition opacity .75s
+			transition(.75s)
 			
 			&:hover
 			&:active
 				opacity 1
+		
+	.icon-picture
+		position absolute
+		top 20px
+		right 20px
+		z-index 1
+		width 1.5em
+		height 1.5em
+		opacity .8
+		cursor pointer
+		color #fff
+		transition(.75s)
+		&:hover
+			opacity 1
 
 .sec-1
 	.content

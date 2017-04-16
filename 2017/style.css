@@ -5,24 +5,9 @@
   font-style: normal;
 }
 .icon {
-/* 图标和文字相邻时，垂直对齐 */
   vertical-align: -0.15em;
-/* 通过设置 color 来改变 SVG 的颜色/fill */
   fill: currentColor;
-/* path 和 stroke 溢出 viewBox 部分在 IE 下会显示
-	   normalize.css 中也包含这行 */
   overflow: hidden;
-}
-.icon-picture {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  z-index: 1;
-  width: 1.5em;
-  height: 1.5em;
-  opacity: 0.8;
-  cursor: pointer;
-  color: #fff;
 }
 html,
 body {
@@ -52,20 +37,37 @@ a:visited {
   z-index: 1;
   background: rgba(0,0,0,0.3);
 }
-.sec-index .bg {
+.sec-index .bg-container {
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
+  overflow: hidden;
+}
+.sec-index .bg-container .bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  top: -15px;
+  right: -15px;
+  bottom: -15px;
+  left: -15px;
   background: #333 url("images/hs.jpeg") no-repeat;
   background-size: cover;
   background-position: 50% 50%;
+  transition: all 1.25s linear;
+}
+.sec-index .bg-container .bg.blur {
+  filter: blur(10px);
 }
 .sec-index .content {
   z-index: 1;
   color: #eee;
   text-align: center;
+  transition: all 0.5s linear;
 }
 .sec-index .content h1 {
   font-size: 48px;
@@ -84,10 +86,25 @@ a:visited {
   margin: 0 auto;
   line-height: 1.6;
   opacity: 0.8;
-  transition: opacity 0.75s;
+  transition: all 0.75s linear;
 }
 .sec-index .content a:hover,
 .sec-index .content a:active {
+  opacity: 1;
+}
+.sec-index .icon-picture {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1;
+  width: 1.5em;
+  height: 1.5em;
+  opacity: 0.8;
+  cursor: pointer;
+  color: #fff;
+  transition: all 0.75s linear;
+}
+.sec-index .icon-picture:hover {
   opacity: 1;
 }
 .sec-1 .content {
