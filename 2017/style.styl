@@ -11,11 +11,36 @@ absolute()
 	font-weight normal
 	font-style normal
 
+.icon
+	/* 图标和文字相邻时，垂直对齐 */
+	vertical-align -0.15em
+	/* 通过设置 color 来改变 SVG 的颜色/fill */
+	fill currentColor
+	/* path 和 stroke 溢出 viewBox 部分在 IE 下会显示
+	   normalize.css 中也包含这行 */
+	overflow hidden
+
+.icon-picture
+	position absolute
+	top 20px
+	right 20px
+	z-index 1
+	width 1.5em
+	height 1.5em
+	opacity .8
+	cursor pointer
+	color #fff
+
 
 html, body
 	height 100%
 	margin 0
 	font-family 'sourcesanspro', 'Helvetica Neue', Arial, sans-serif
+
+a, a:visited
+	color #fff
+	text-decoration none
+	
 	
 .sec-index
 	display flex
@@ -27,18 +52,49 @@ html, body
 	.cover
 		absolute()
 		z-index 1
-		background rgba(0,0,0,0.25)
+		background rgba(0,0,0,0.3)
 	
 	.bg
 		absolute()
-		background url('images/hs.jpeg') no-repeat
+		background #333 url('images/hs.jpeg') no-repeat
 		background-size cover
 		background-position 50% 50%
 	.content
 		z-index 1
-		font-size 36px
-		color #fff
+		color #eee
 		text-align center
+		
+		h1
+			font-size 48px
+			font-weight 200
+			margin 10px 0 0
+			opacity 0.9
+
+		p
+			margin 0 0 25px
+			opacity 0.9
+			font-size 18px
+			
+		a
+			display block
+			width 100px
+			margin 0 auto
+			line-height 1.6
+			opacity 0.8
+			transition opacity .75s
+			
+			&:hover
+			&:active
+				opacity 1
+
+.sec-1
+	.content
+		margin 200px 100px
+	
+		h2
+			float left
+			font-weight 100
+			font-size 48px
 
 section
 	.fix-bg
